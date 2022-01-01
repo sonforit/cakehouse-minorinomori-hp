@@ -6,7 +6,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "sb": "start-storybook -p 6006",
+    "sb": "start-storybook -s ./public -p 6006",
     "gen:fc": "hygen component new"
   },
   "dependencies": {
