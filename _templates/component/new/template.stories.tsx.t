@@ -4,7 +4,7 @@ to: "<%= ['layouts', 'templates'].includes(component_type) ? null : `src/compone
 import React, { ComponentProps } from 'react';
 import { css } from '@emotion/react';
 import { Story, Meta } from '@storybook/react';
-import { <%= component_name %> } from '@/components/<%= component_type %>';
+import { <%= component_name %> } from './<%= component_name %>';
 import { setCommonSettings } from '@/utils/storybookHelpers';
 
 export default {
