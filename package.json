@@ -6,7 +6,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "sb": "start-storybook -p 6006"
+    "sb": "start-storybook -p 6006",
+    "gen:fc": "hygen component new"
   },
   "dependencies": {
     "@emotion/react": "^11.7.1",
