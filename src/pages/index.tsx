@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import { css } from '@emotion/react'
 
 const Home: NextPage = () => {
   return (
@@ -64,9 +65,14 @@ const Home: NextPage = () => {
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
+        <p css={style}>sanmple text</p>
       </footer>
     </div>
   )
 }
 
 export default Home
+
+const style = css`
+  color: red;
+`;
