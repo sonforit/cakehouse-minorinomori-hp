@@ -3,14 +3,12 @@ import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import { css } from '@emotion/react';
 import { GlobalHead } from '@/components/utils';
+import { PAGE } from '@/constants/pages';
 
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
-      <GlobalHead
-        title="ホーム"
-        description="お菓子の焼き上がる素敵な香りがあふれる店内で、 ゆっくりとお好みのお菓子をお選びください。 みのりの森のお菓子たちが、 皆様の素敵なひとときに華を添えることができたらシアワセです♪ インフォメーション 焼菓子・お誕生日ケーキ・贈答品をご予算"
-      />
+      <GlobalHead title={PAGE.HOME.LABEL} description={PAGE.HOME.DESCRIPTION} />
 
       <main className={styles.main}>
         <h1 className={styles.title}>

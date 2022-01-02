@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FullWidth } from '@/components/utils';
 import { COLOR, FONT_FAMILY } from '@/constants/styles';
+import { PAGE } from '@/constants/pages';
 
 type Props = {
   className?: string;
@@ -12,7 +13,7 @@ type Props = {
 export const Header: VFC<Props> = ({ className }) => {
   return (
     <FullWidth as="header" css={style} expansionStyle={innerStyle} className={className}>
-      <Link href="/">
+      <Link href={PAGE.HOME.PATH}>
         <a>
           <Image src="/logos/logo-default.png" width={400} height={66} />
         </a>
@@ -20,23 +21,23 @@ export const Header: VFC<Props> = ({ className }) => {
       <nav css={navStyle}>
         <ul>
           <li>
-            <Link href="/products">
-              <a>商品一覧</a>
+            <Link href={PAGE.PRODUCTS.PATH}>
+              <a>{PAGE.PRODUCTS.LABEL}</a>
             </Link>
           </li>
           <li>
-            <Link href="/delivery">
-              <a>宅配サービス</a>
+            <Link href={PAGE.DELIVERY.PATH}>
+              <a>{PAGE.DELIVERY.LABEL}</a>
             </Link>
           </li>
           <li>
-            <Link href="/chef">
-              <a>シェフの紹介</a>
+            <Link href={PAGE.CHEF.LABEL}>
+              <a>{PAGE.CHEF.PATH}</a>
             </Link>
           </li>
           <li>
-            <Link href="/about">
-              <a>お店の紹介</a>
+            <Link href={PAGE.ABOUT.LABEL}>
+              <a>{PAGE.ABOUT.PATH}</a>
             </Link>
           </li>
         </ul>
