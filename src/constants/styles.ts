@@ -16,6 +16,10 @@ export const COLOR = {
   },
   FONT: {
     DEFAULT: '#333',
+    NOTE: '#808080',
+  },
+  BG: {
+    FOOTER: '#6E5450',
   },
 };
 
