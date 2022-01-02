@@ -31,13 +31,13 @@ export const Header: VFC<Props> = ({ className }) => {
             </Link>
           </li>
           <li>
-            <Link href={PAGE.CHEF.LABEL}>
-              <a>{PAGE.CHEF.PATH}</a>
+            <Link href={PAGE.CHEF.PATH}>
+              <a>{PAGE.CHEF.LABEL}</a>
             </Link>
           </li>
           <li>
-            <Link href={PAGE.ABOUT.LABEL}>
-              <a>{PAGE.ABOUT.PATH}</a>
+            <Link href={PAGE.ABOUT.PATH}>
+              <a>{PAGE.ABOUT.LABEL}</a>
             </Link>
           </li>
         </ul>
