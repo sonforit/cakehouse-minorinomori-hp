@@ -10,7 +10,7 @@ type Props = {
 
 export const Footer: VFC<Props> = ({ className }) => {
   return (
-    <FullWidth as="footer" expansionStyle={style} className={className}>
+    <FullWidth as="footer" css={style} expansionStyle={innerStyle} className={className}>
       <span>&copy;</span>
       <span>2022</span>
       <span>{SHOP_NAME}</span>
@@ -19,6 +19,10 @@ export const Footer: VFC<Props> = ({ className }) => {
 };
 
 const style = css`
+  background-color: ${COLOR.BG.FOOTER};
+`;
+
+const innerStyle = css`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,5 +31,4 @@ const style = css`
   font-size: 16px;
   color: white;
   padding: 56px 0;
-  background-color: ${COLOR.BG.FOOTER};
 `;
