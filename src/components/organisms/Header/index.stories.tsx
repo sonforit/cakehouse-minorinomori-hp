@@ -1,7 +1,7 @@
 import React, { ComponentProps } from 'react';
 import { css } from '@emotion/react';
 import { Story, Meta } from '@storybook/react';
-import { Header } from './Header';
+import { Header } from '.';
 import { setCommonSettings } from '@/utils/storybookHelpers';
 
 export default {

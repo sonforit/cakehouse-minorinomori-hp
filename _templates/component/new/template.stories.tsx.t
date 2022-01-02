@@ -1,10 +1,10 @@
 ---
-to: "<%= ['layouts', 'templates'].includes(component_type) ? null : `src/components/${component_type}/${path_name}/${component_name}.stories.tsx` %>"
+to: "<%= ['layouts', 'templates'].includes(component_type) ? null : `src/components/${component_type}/${path_name}/index.stories.tsx` %>"
 ---
 import React, { ComponentProps } from 'react';
 import { css } from '@emotion/react';
 import { Story, Meta } from '@storybook/react';
-import { <%= component_name %> } from './<%= component_name %>';
+import { <%= component_name %> } from '@/components/<%= component_type %>';
 import { setCommonSettings } from '@/utils/storybookHelpers';
 
 export default {
