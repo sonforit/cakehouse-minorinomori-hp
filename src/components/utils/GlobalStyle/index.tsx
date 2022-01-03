@@ -11,7 +11,7 @@ export const GlobalStyle: VFC = () => (
           box-sizing: border-box;
         }
 
-        #app {
+        #__next {
           display: flex;
           flex-direction: column;
           min-height: 100vh;
