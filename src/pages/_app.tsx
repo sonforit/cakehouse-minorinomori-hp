@@ -9,7 +9,10 @@ function App({ Component, pageProps }: AppProps) {
     <>
       <GlobalStyle />
       <Header />
-      <Component {...pageProps} />
+      <main>
+        <Component {...pageProps} />
+      </main>
+
       <Footer />
     </>
   );
