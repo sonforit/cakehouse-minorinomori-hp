@@ -10,7 +10,10 @@ export const MQ = {
 } as const;
 
 export const COLOR = {
-  THEME: '#E8C355',
+  THEME: {
+    PRIMARY: '#E8C355',
+    SECONDARY: '#BFB8A8',
+  },
   BORDER: {
     DEFAULT: '#EFEDE9',
   },
@@ -20,6 +23,7 @@ export const COLOR = {
   },
   BG: {
     FOOTER: '#6E5450',
+    SECTION: '#FAF9F7',
   },
 };
 

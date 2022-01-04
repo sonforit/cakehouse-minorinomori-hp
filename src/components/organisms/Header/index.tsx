@@ -85,7 +85,7 @@ const navStyle = css`
             display: block;
             width: 100%;
             height: 4px;
-            background-color: ${COLOR.THEME};
+            background-color: ${COLOR.THEME.PRIMARY};
             border-radius: 2px;
           }
         }
