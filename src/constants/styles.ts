@@ -43,3 +43,7 @@ export const FONT_FAMILY = {
 export const LINE_HEIGHT = {
   DEFAULT: 1.5,
 } as const;
+
+export const Z_INDEX = {
+  HEADER: 5000,
+} as const;

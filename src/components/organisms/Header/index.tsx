@@ -3,7 +3,7 @@ import { css } from '@emotion/core';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FullWidth } from '@/components/utils';
-import { COLOR, FONT_FAMILY } from '@/constants/styles';
+import { COLOR, FONT_FAMILY, Z_INDEX } from '@/constants/styles';
 import { PAGE } from '@/constants/pages';
 
 type Props = {
@@ -49,6 +49,10 @@ export const Header: VFC<Props> = ({ className }) => {
 const style = css`
   height: 100px;
   border-bottom: solid 1px ${COLOR.BORDER.DEFAULT};
+  position: sticky;
+  top: 0;
+  z-index: ${Z_INDEX.HEADER};
+  background-color: rgba(255, 255, 255, 0.95);
 `;
 
 const innerStyle = css`
