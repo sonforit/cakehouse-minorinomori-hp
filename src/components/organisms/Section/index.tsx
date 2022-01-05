@@ -9,11 +9,24 @@ type Props = {
   titleJp: string;
   titleEn: string;
   children: ReactNode;
+  isFullSize?: boolean;
 };
 
-export const Section: VFC<Props> = ({ className, colored = false, titleJp, titleEn, children }) => {
+export const Section: VFC<Props> = ({
+  className,
+  colored = false,
+  titleJp,
+  titleEn,
+  children,
+  isFullSize = false,
+}) => {
   return (
-    <FullWidth as="section" css={style(colored)} className={className}>
+    <FullWidth
+      as="section"
+      css={style(colored)}
+      expansionStyle={innerStyle(isFullSize)}
+      className={className}
+    >
       <h2 css={titleStyle}>
         <span className="title-jp">{titleJp}</span>
         <span className="title-en">{titleEn}</span>
@@ -28,6 +41,16 @@ const style = (colored: boolean) => css`
   padding-top: 78px;
   padding-bottom: 100px;
 `;
+
+const innerStyle = (isFullSize: boolean) =>
+  isFullSize
+    ? css`
+        width: 100%;
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+      `
+    : undefined;
 
 const titleStyle = css`
   display: flex;
