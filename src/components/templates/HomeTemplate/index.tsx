@@ -1,8 +1,11 @@
 import { VFC } from 'react';
 import { css } from '@emotion/core';
-import { TopImageSlider, Section } from '@/components/organisms';
+import { TopImageSlider, Section, AccessMap } from '@/components/organisms';
 import { FONT_FAMILY, COLOR } from '@/constants/styles';
 import { FullWidth } from '@/components/utils';
+import Link from 'next/link';
+import Image from 'next/image';
+import { PAGE } from '@/constants/pages';
 
 type Props = {
   className?: string;
@@ -27,13 +30,24 @@ export const HomeTemplate: VFC<Props> = ({ className }) => {
         コンテンツは後から
       </Section>
       <Section titleJp="特別なケーキ" titleEn="Special Cake">
-        コンテンツは後から
+        <div css={specialContentsStyle}>
+          <Link href={PAGE.CHARACTER_CAKE.PATH}>
+            <a>
+              <Image src="/images/character-cake.png" width={570} height={300} />
+            </a>
+          </Link>
+          <Link href={PAGE.THREE_D_CAKE.PATH}>
+            <a>
+              <Image src="/images/three-d-cake.png" width={570} height={300} />
+            </a>
+          </Link>
+        </div>
       </Section>
       <Section titleJp="ニュース" titleEn="News" colored>
         コンテンツは後から
       </Section>
-      <Section titleJp="アクセス" titleEn="Access">
-        コンテンツは後から
+      <Section css={accessSectionStyle} titleJp="アクセス" titleEn="Access" isFullSize>
+        <AccessMap />
       </Section>
     </div>
   );
@@ -47,4 +61,20 @@ const messageStyle = css`
   text-align: center;
   color: ${COLOR.FONT.DEFAULT};
   letter-spacing: 0.2em;
+`;
+
+const specialContentsStyle = css`
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+
+  > a {
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+`;
+
+const accessSectionStyle = css`
+  padding-bottom: 0;
 `;

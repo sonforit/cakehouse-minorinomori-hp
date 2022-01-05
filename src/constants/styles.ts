@@ -25,7 +25,7 @@ export const COLOR = {
     FOOTER: '#6E5450',
     SECTION: '#FAF9F7',
   },
-};
+} as const;
 
 const BASE_FONT_FAMILY =
   '"Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;' as const;
@@ -38,4 +38,8 @@ export const FONT_FAMILY = {
   EN: {
     HEADING: `'Dancing Script', ${BASE_FONT_FAMILY}`,
   },
+} as const;
+
+export const LINE_HEIGHT = {
+  DEFAULT: 1.5,
 } as const;

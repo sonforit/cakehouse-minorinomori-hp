@@ -21,4 +21,12 @@ export const PAGE = {
     LABEL: 'お店の紹介',
     PATH: '/about',
   },
+  CHARACTER_CAKE: {
+    LABEL: 'キャラクターケーキ',
+    PATH: '/character-cake',
+  },
+  THREE_D_CAKE: {
+    LABEL: '3Dケーキ',
+    PATH: '/three-d-cake',
+  },
 } as const;
