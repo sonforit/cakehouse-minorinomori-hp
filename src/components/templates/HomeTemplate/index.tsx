@@ -1,7 +1,7 @@
 import { VFC } from 'react';
 import { css } from '@emotion/core';
 import { TopImageSlider, Section, AccessMap } from '@/components/organisms';
-import { FONT_FAMILY, COLOR } from '@/constants/styles';
+import { FONT_FAMILY, COLOR, OPACITY } from '@/constants/styles';
 import { FullWidth } from '@/components/utils';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -70,7 +70,7 @@ const specialContentsStyle = css`
 
   > a {
     &:hover {
-      opacity: 0.8;
+      opacity: ${OPACITY.HOVER};
     }
   }
 `;

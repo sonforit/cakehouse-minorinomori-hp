@@ -47,3 +47,7 @@ export const LINE_HEIGHT = {
 export const Z_INDEX = {
   HEADER: 5000,
 } as const;
+
+export const OPACITY = {
+  HOVER: 0.8,
+};
