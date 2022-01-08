@@ -10,7 +10,6 @@ const mapSettings = {
   point: 'ケーキハウスみのりの森',
   mapType: 'm',
   zoomLevel: '16',
-  mapPosition: '33.27126733064338,130.4742373986364',
 };
 
 export const AccessMap: VFC<Props> = ({ className }) => {
