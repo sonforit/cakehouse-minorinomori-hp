@@ -58,8 +58,11 @@ const style = css`
   width: fit-content;
   height: 60px;
   cursor: pointer;
+  transition: all 0.2s ease;
 
   &:hover {
-    opacity: ${OPACITY.HOVER};
+    color: white;
+    font-weight: bold;
+    background-color: ${COLOR.THEME.PRIMARY};
   }
 `;
