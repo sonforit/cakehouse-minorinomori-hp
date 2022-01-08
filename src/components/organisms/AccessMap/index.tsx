@@ -6,12 +6,18 @@ type Props = {
   className?: string;
 };
 
+const mapSettings = {
+  point: 'ケーキハウスみのりの森',
+  mapType: 'm',
+  zoomLevel: '16',
+  mapPosition: '33.27126733064338,130.4742373986364',
+};
+
 export const AccessMap: VFC<Props> = ({ className }) => {
   return (
     <div css={style} className={className}>
       <iframe
-        src="https://maps.google.co.jp/maps?output=embed&q=ケーキハウスみのりの森
-        &t=m&z=16"
+        src={`https://maps.google.co.jp/maps?output=embed&q=${mapSettings.point}&t=${mapSettings.mapType}&z=${mapSettings.zoomLevel}&ll=${mapSettings.mapPosition}`}
         width="100%"
         height="auto"
         frameBorder="0"
@@ -24,7 +30,7 @@ export const AccessMap: VFC<Props> = ({ className }) => {
 
 const style = css`
   position: relative;
-  padding-bottom: 41.6%;
+  padding-bottom: 40%;
   height: 0;
   overflow: hidden;
 

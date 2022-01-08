@@ -46,7 +46,7 @@ export const CompanyCard: VFC<Props> = ({ className }) => {
 const style = css`
   width: 400px;
   background-color: rgba(255, 255, 255, 0.9);
-  padding: 40px 32px;
+  padding: 16px;
   border: solid 1px ${COLOR.BORDER.DEFAULT};
 
   > header {
@@ -54,11 +54,11 @@ const style = css`
   }
 
   > dl {
-    margin-top: 32px;
+    margin-top: 16px;
 
     > div {
       border-top: solid 1px ${COLOR.BORDER.DEFAULT};
-      padding: 24px 0;
+      padding: 16px 0;
       font-size: 14px;
       font-family: ${FONT_FAMILY.JP.SECONDARY};
       display: flex;
