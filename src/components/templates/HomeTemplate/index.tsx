@@ -6,6 +6,7 @@ import { FullWidth } from '@/components/utils';
 import Link from 'next/link';
 import Image from 'next/image';
 import { PAGE } from '@/constants/pages';
+import { BaseButton } from '@/components/atoms';
 
 type Props = {
   className?: string;
@@ -28,6 +29,9 @@ export const HomeTemplate: VFC<Props> = ({ className }) => {
       </FullWidth>
       <Section titleJp="おすすめ" titleEn="Recommends" colored>
         コンテンツは後から
+        <footer css={sectionFooter}>
+          <BaseButton href={PAGE.PRODUCTS.PATH}>全ての商品はこちら</BaseButton>
+        </footer>
       </Section>
       <Section titleJp="特別なケーキ" titleEn="Special Cake">
         <div css={specialContentsStyle}>
@@ -77,4 +81,10 @@ const specialContentsStyle = css`
 
 const accessSectionStyle = css`
   padding-bottom: 0;
+`;
+
+const sectionFooter = css`
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
 `;

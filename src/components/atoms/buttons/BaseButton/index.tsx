@@ -5,11 +5,11 @@ import { COLOR, FONT_FAMILY, OPACITY } from '@/constants/styles';
 
 type ButtonProps = {
   onClick(): void;
-  href: undefined;
+  href?: undefined;
 };
 
 type LinkProps = {
-  onClick: undefined;
+  onClick?: undefined;
   href: string;
 };
 
