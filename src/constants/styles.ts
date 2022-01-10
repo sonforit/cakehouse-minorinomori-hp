@@ -16,6 +16,7 @@ export const COLOR = {
   },
   BORDER: {
     DEFAULT: '#EFEDE9',
+    IMAGE_DECO: 'rgba(255, 255, 255, 0.8)',
   },
   FONT: {
     DEFAULT: '#333',
