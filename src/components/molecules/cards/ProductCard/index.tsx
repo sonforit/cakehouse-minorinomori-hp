@@ -1,7 +1,6 @@
 import { VFC } from 'react';
 import { css } from '@emotion/core';
 import type { Product } from '@/domains/Product';
-import Image from 'next/image';
 import Link from 'next/link';
 import { PAGE } from '@/constants/pages';
 import { COLOR, FONT_FAMILY } from '@/constants/styles';
@@ -17,7 +16,7 @@ export const ProductCard: VFC<Props> = ({ className, product }) => {
       <a css={style} className={className}>
         {product.getIsNew() && <span css={newTagStyle}>New</span>}
         <div className="image-area">
-          <Image src={product.imageUrls[0]} width={320} height={180} />
+          <img src={product.imageUrls[0]} alt={`${product.name}の画像`} loading="lazy" />
         </div>
         <div className="content">
           <span className="name">{product.name}</span>
@@ -38,7 +37,8 @@ const style = css`
 
   > .image-area {
     width: 100%;
-    height: 180px;
+    height: 0;
+    padding-top: 75%;
     position: relative;
 
     &:after {
@@ -56,6 +56,11 @@ const style = css`
     }
 
     img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
     }
   }
