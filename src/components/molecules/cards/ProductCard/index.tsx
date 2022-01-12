@@ -2,6 +2,7 @@ import { VFC } from 'react';
 import { css } from '@emotion/core';
 import type { Product } from '@/domains/Product';
 import Link from 'next/link';
+import Image from 'next/image';
 import { PAGE } from '@/constants/pages';
 import { COLOR, FONT_FAMILY } from '@/constants/styles';
 
@@ -12,11 +13,13 @@ type Props = {
 
 export const ProductCard: VFC<Props> = ({ className, product }) => {
   return (
-    <Link href={`${PAGE.PRODUCTS.PATH}/${product.id}`}>
+    <Link href={`${PAGE.PRODUCTS.PATH}/${product.slug}`}>
       <a css={style} className={className}>
         {product.getIsNew() && <span css={newTagStyle}>New</span>}
         <div className="image-area">
-          <img src={product.imageUrls[0]} alt={`${product.name}の画像`} loading="lazy" />
+          <div className="image-wrapper">
+            <Image src={product.imageUrl} width={360} height={270} alt={`${product.name}の画像`} />
+          </div>
         </div>
         <div className="content">
           <span className="name">{product.name}</span>
@@ -55,13 +58,16 @@ const style = css`
       border: solid 1px ${COLOR.BORDER.IMAGE_DECO};
     }
 
-    img {
+    > .image-wrapper {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+
+      img {
+        object-fit: cover;
+      }
     }
   }
 

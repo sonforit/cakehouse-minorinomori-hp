@@ -4,10 +4,10 @@ export type PriceItem = {
 };
 
 export type ProductInitializer = {
-  id: string;
+  slug: string;
   name: string;
   prices: PriceItem[];
-  imageUrls: string[];
+  imageUrl: string;
   description: string;
   createdAt: Date;
 };

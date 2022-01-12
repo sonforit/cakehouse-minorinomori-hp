@@ -10,7 +10,7 @@ export default {
     title: 'molecules/cards/ProductCard',
     component: ProductCard,
     appendStyle: css`
-      width: 320px;
+      width: 360px;
       margin: 32px;
     `,
     removeControls: ['className'],
@@ -22,14 +22,14 @@ const Template: Story<Props> = (args) => <ProductCard {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   product: new Product({
-    id: '123',
+    slug: 'ichigo-short',
     name: '苺のショート',
     prices: [
       {
         price: 3000,
       },
     ],
-    imageUrls: ['http://www.minorino-mori.net/wp/wp-content/uploads/2014/07/bana01.jpg'],
+    imageUrl: 'http://www.minorino-mori.net/wp/wp-content/uploads/2014/07/bana01.jpg',
     description:
       '商品の説明が入ります。商品の説明が入ります。商品の説明が入ります。商品の説明が入ります。商品の説明が入ります。商品の説明が入ります。商品の説明が入ります。商品の説明が入ります。商品の説明が入ります。',
     createdAt: new Date(),

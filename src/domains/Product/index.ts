@@ -2,10 +2,10 @@ import { checkIsNew, createPriceLabel } from './utils';
 import { ProductInitializer } from './types';
 
 export class Product {
-  id: ProductInitializer['id'] = '';
+  slug: ProductInitializer['slug'] = '';
   name: ProductInitializer['name'] = '';
   prices: ProductInitializer['prices'] = [];
-  imageUrls: ProductInitializer['imageUrls'] = [];
+  imageUrl: ProductInitializer['imageUrl'] = '';
   description: ProductInitializer['description'] = '';
   createdAt: ProductInitializer['createdAt'] = new Date();
 
