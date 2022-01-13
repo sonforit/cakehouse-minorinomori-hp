@@ -13,7 +13,6 @@ type Props = {
 
 const Home: NextPage<Props> = ({ fetchProductsRespose }) => {
   const products = fetchProductsRespose.items.map((product) => convertProduct(product));
-  console.log({ fetchProductsRespose, products });
 
   return (
     <div id="page-home">
