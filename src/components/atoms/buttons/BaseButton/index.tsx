@@ -1,7 +1,7 @@
 import { VFC, ReactNode } from 'react';
 import { css } from '@emotion/core';
 import Link from 'next/link';
-import { COLOR, FONT_FAMILY, OPACITY } from '@/constants/styles';
+import { COLOR, FONT_FAMILY } from '@/constants/styles';
 
 type ButtonProps = {
   onClick(): void;

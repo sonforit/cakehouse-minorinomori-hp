@@ -16,7 +16,7 @@ export const AccessMap: VFC<Props> = ({ className }) => {
   return (
     <div css={style} className={className}>
       <iframe
-        src={`https://maps.google.co.jp/maps?output=embed&q=${mapSettings.point}&t=${mapSettings.mapType}&z=${mapSettings.zoomLevel}&ll=${mapSettings.mapPosition}`}
+        src={`https://maps.google.co.jp/maps?output=embed&q=${mapSettings.point}&t=${mapSettings.mapType}&z=${mapSettings.zoomLevel}`}
         width="100%"
         height="auto"
         frameBorder="0"
