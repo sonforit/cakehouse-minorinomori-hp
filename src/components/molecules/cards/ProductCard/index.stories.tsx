@@ -22,16 +22,22 @@ const Template: Story<Props> = (args) => <ProductCard {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   product: new Product({
-    slug: 'ichigo-short',
     name: '苺のショート',
+    slug: 'ichigo-short',
+    category: {
+      name: 'デコレーション',
+      slug: 'decoration',
+    },
     prices: [
       {
+        label: '',
         price: 3000,
       },
     ],
     imageUrl: 'http://www.minorino-mori.net/wp/wp-content/uploads/2014/07/bana01.jpg',
     description:
       '商品の説明が入ります。商品の説明が入ります。商品の説明が入ります。商品の説明が入ります。商品の説明が入ります。商品の説明が入ります。商品の説明が入ります。商品の説明が入ります。商品の説明が入ります。',
+    notes: [],
     createdAt: new Date(),
   }),
 } as Props;

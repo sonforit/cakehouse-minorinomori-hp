@@ -1,13 +1,20 @@
 export type PriceItem = {
-  type?: string;
+  label: string;
   price: number;
 };
 
-export type ProductInitializer = {
-  slug: string;
+export type Category = {
   name: string;
+  slug: string;
+};
+
+export type ProductInitializer = {
+  name: string;
+  slug: string;
+  category: Category;
   prices: PriceItem[];
   imageUrl: string;
   description: string;
+  notes: string[];
   createdAt: Date;
 };

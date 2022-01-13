@@ -2,18 +2,54 @@ import { checkIsNew, createPriceLabel } from './utils';
 import { ProductInitializer } from './types';
 
 export class Product {
-  slug: ProductInitializer['slug'] = '';
-  name: ProductInitializer['name'] = '';
-  prices: ProductInitializer['prices'] = [];
-  imageUrl: ProductInitializer['imageUrl'] = '';
-  description: ProductInitializer['description'] = '';
-  createdAt: ProductInitializer['createdAt'] = new Date();
+  private _name: ProductInitializer['name'] = '';
+  private _slug: ProductInitializer['slug'] = '';
+  private _category: ProductInitializer['category'] = { name: '', slug: '' };
+  private _prices: ProductInitializer['prices'] = [];
+  private _imageUrl: ProductInitializer['imageUrl'] = '';
+  private _description: ProductInitializer['description'] = '';
+  private _notes: ProductInitializer['notes'] = [];
+  private _createdAt: ProductInitializer['createdAt'] = new Date();
 
   constructor(initialValues: ProductInitializer) {
-    Object.assign(this, initialValues);
+    this._name = initialValues.name;
+    this._slug = initialValues.slug;
+    this._category = initialValues.category;
+    this._prices = initialValues.prices;
+    this._imageUrl = initialValues.imageUrl;
+    this._description = initialValues.description;
+    this._notes = initialValues.notes;
+    this._createdAt = initialValues.createdAt;
   }
 
-  getIsNew = () => checkIsNew(new Date(), this.createdAt);
-
-  getPriceLabel = () => createPriceLabel(this.prices);
+  get name() {
+    return this._name;
+  }
+  get slug() {
+    return this._slug;
+  }
+  get category() {
+    return this._category;
+  }
+  get prices() {
+    return this._prices;
+  }
+  get imageUrl() {
+    return this._imageUrl;
+  }
+  get description() {
+    return this._description;
+  }
+  get notes() {
+    return this._notes;
+  }
+  get createdAt() {
+    return this._createdAt;
+  }
+  get isNew() {
+    return checkIsNew(new Date(), this.createdAt);
+  }
+  get minPriceLabel() {
+    return createPriceLabel(this._prices);
+  }
 }

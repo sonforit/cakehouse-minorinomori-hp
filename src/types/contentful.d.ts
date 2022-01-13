@@ -33,7 +33,7 @@ export interface IProductFields {
   name: string;
 
   /** Slug */
-  slug?: string | undefined;
+  slug: string;
 
   /** カテゴリー */
   category: Entry<{ [fieldId: string]: unknown }>;
@@ -42,7 +42,7 @@ export interface IProductFields {
   description?: string | undefined;
 
   /** 金額 */
-  priceList?: string[] | undefined;
+  prices: string[];
 
   /** 画像 */
   imageUrl: Asset;

@@ -5,18 +5,20 @@ import { HomeTemplate } from '@/components/templates';
 import { EntryCollection, createClient } from 'contentful';
 import type { IProductFields } from '@/types/contentful';
 import { CATEGORY_DECORATION_ID } from '@/constants/contentful';
+import { convertProduct } from '@/domains/Product/utils';
 
 type Props = {
-  products: EntryCollection<IProductFields>;
+  fetchProductsRespose: EntryCollection<IProductFields>;
 };
 
-const Home: NextPage<Props> = ({ products }) => {
-  console.log({ products });
+const Home: NextPage<Props> = ({ fetchProductsRespose }) => {
+  const products = fetchProductsRespose.items.map((product) => convertProduct(product));
+  console.log({ fetchProductsRespose, products });
 
   return (
     <div id="page-home">
       <GlobalHead title={PAGE.HOME.LABEL} description={PAGE.HOME.DESCRIPTION} />
-      <HomeTemplate />
+      <HomeTemplate products={products} />
     </div>
   );
 };
@@ -29,7 +31,7 @@ export const getStaticProps = async () => {
     accessToken: process.env.CONTENTFUL_ACCESS_KEY || '',
   });
 
-  const products = await client.getEntries<IProductFields>({
+  const fetchProductsRespose = await client.getEntries<IProductFields>({
     content_type: 'product',
     'fields.category.sys.id': CATEGORY_DECORATION_ID,
     limit: 9,
@@ -37,7 +39,7 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      products,
+      fetchProductsRespose,
     },
   };
 };

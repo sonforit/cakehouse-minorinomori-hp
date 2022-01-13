@@ -4,7 +4,7 @@ import type { Product } from '@/domains/Product';
 import Link from 'next/link';
 import Image from 'next/image';
 import { PAGE } from '@/constants/pages';
-import { COLOR, FONT_FAMILY } from '@/constants/styles';
+import { COLOR, FONT_FAMILY, OPACITY } from '@/constants/styles';
 
 type Props = {
   className?: string;
@@ -15,15 +15,21 @@ export const ProductCard: VFC<Props> = ({ className, product }) => {
   return (
     <Link href={`${PAGE.PRODUCTS.PATH}/${product.slug}`}>
       <a css={style} className={className}>
-        {product.getIsNew() && <span css={newTagStyle}>New</span>}
+        {product.isNew && <span css={newTagStyle}>New</span>}
         <div className="image-area">
           <div className="image-wrapper">
-            <Image src={product.imageUrl} width={360} height={270} alt={`${product.name}の画像`} />
+            <Image
+              src={`${product.imageUrl}?w=360`}
+              width={360}
+              height={270}
+              alt={`${product.name}の画像`}
+            />
           </div>
         </div>
         <div className="content">
+          <span className="category">{product.category.name}</span>
           <span className="name">{product.name}</span>
-          <span className="price">{product.getPriceLabel()}</span>
+          <span className="price">{product.minPriceLabel}</span>
         </div>
       </a>
     </Link>
@@ -37,12 +43,22 @@ const style = css`
   overflow: hidden;
   position: relative;
   color: ${COLOR.FONT.DEFAULT};
+  cursor: pointer;
+
+  &:hover {
+    opacity: ${OPACITY.HOVER};
+
+    img {
+      transform: scale(1.1);
+    }
+  }
 
   > .image-area {
     width: 100%;
     height: 0;
     padding-top: 75%;
     position: relative;
+    background-color: ${COLOR.THEME.SECONDARY};
 
     &:after {
       display: block;
@@ -67,6 +83,7 @@ const style = css`
 
       img {
         object-fit: cover;
+        transition: all 5s ease;
       }
     }
   }
@@ -77,15 +94,25 @@ const style = css`
     flex-direction: column;
     gap: 16px;
 
+    > .category {
+      width: fit-content;
+      background-color: ${COLOR.THEME.SECONDARY};
+      color: white;
+      font-size: 12px;
+      padding: 4px 8px;
+      text-decoration: none;
+    }
+
     > .name {
       font-family: ${FONT_FAMILY.JP.PRIMARY};
-      font-size: 28px;
+      font-size: 22px;
+      font-weight: bold;
     }
 
     > .price {
       color: ${COLOR.THEME.SECONDARY};
       font-family: ${FONT_FAMILY.JP.SECONDARY};
-      font-size: 18px;
+      font-size: 16px;
       font-weight: bold;
     }
   }

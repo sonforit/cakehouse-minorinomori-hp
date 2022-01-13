@@ -7,16 +7,19 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { PAGE } from '@/constants/pages';
 import { BaseButton } from '@/components/atoms';
+import { Product } from '@/domains/Product';
+import { ProductCard } from '@/components/molecules';
 
 type Props = {
   className?: string;
+  products: Product[];
 };
 
-export const HomeTemplate: VFC<Props> = ({ className }) => {
+export const HomeTemplate: VFC<Props> = ({ className, products }) => {
   return (
     <div className={className}>
       <TopImageSlider />
-      <FullWidth as="p" css={messageStyle}>
+      <FullWidth as="div" css={messageStyle}>
         お菓子の焼き上がる素敵な香りがあふれる店内で、
         <br />
         ゆっくりとお好みのお菓子をお選びください。
@@ -27,8 +30,14 @@ export const HomeTemplate: VFC<Props> = ({ className }) => {
         <br />
         華を添えることができたらシアワセです♪
       </FullWidth>
-      <Section titleJp="おすすめ" titleEn="Recommends" colored>
-        コンテンツは後から
+      <Section titleJp="商品" titleEn="Products" colored>
+        <ul css={productListStyle}>
+          {products.map((product) => (
+            <li key={product.slug}>
+              <ProductCard product={product} />
+            </li>
+          ))}
+        </ul>
         <footer css={sectionFooter}>
           <BaseButton href={PAGE.PRODUCTS.PATH}>全ての商品はこちら</BaseButton>
         </footer>
@@ -86,5 +95,16 @@ const accessSectionStyle = css`
 const sectionFooter = css`
   display: flex;
   justify-content: center;
-  margin-top: 16px;
+  margin-top: 80px;
+`;
+
+const productListStyle = css`
+  display: flex;
+  justify-content: space-between;
+  gap: 48px;
+  flex-wrap: wrap;
+
+  > li {
+    width: 30%;
+  }
 `;
