@@ -2,7 +2,6 @@ import { VFC } from 'react';
 import { css } from '@emotion/core';
 import type { Product } from '@/domains/Product';
 import Link from 'next/link';
-import Image from 'next/image';
 import { PAGE } from '@/constants/pages';
 import { COLOR, FONT_FAMILY, OPACITY } from '@/constants/styles';
 
@@ -18,7 +17,7 @@ export const ProductCard: VFC<Props> = ({ className, product }) => {
         {product.isNew && <span css={newTagStyle}>New</span>}
         <div className="image-area">
           <div className="image-wrapper">
-            <Image
+            <img
               src={`${product.imageUrl}?w=360`}
               width={360}
               height={270}

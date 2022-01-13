@@ -4,7 +4,6 @@ import { TopImageSlider, Section, AccessMap } from '@/components/organisms';
 import { FONT_FAMILY, COLOR, OPACITY } from '@/constants/styles';
 import { FullWidth } from '@/components/utils';
 import Link from 'next/link';
-import Image from 'next/image';
 import { PAGE } from '@/constants/pages';
 import { BaseButton } from '@/components/atoms';
 import { Product } from '@/domains/Product';
@@ -46,12 +45,12 @@ export const HomeTemplate: VFC<Props> = ({ className, products }) => {
         <div css={specialContentsStyle}>
           <Link href={PAGE.CHARACTER_CAKE.PATH}>
             <a>
-              <Image src="/images/character-cake.png" width={570} height={300} />
+              <img src="/images/character-cake.png" width={570} height={300} />
             </a>
           </Link>
           <Link href={PAGE.THREE_D_CAKE.PATH}>
             <a>
-              <Image src="/images/three-d-cake.png" width={570} height={300} />
+              <img src="/images/three-d-cake.png" width={570} height={300} />
             </a>
           </Link>
         </div>

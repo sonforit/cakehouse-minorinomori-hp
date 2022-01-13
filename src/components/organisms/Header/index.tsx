@@ -1,6 +1,5 @@
 import { VFC } from 'react';
 import { css } from '@emotion/core';
-import Image from 'next/image';
 import Link from 'next/link';
 import { FullWidth } from '@/components/utils';
 import { COLOR, FONT_FAMILY, Z_INDEX } from '@/constants/styles';
@@ -15,7 +14,7 @@ export const Header: VFC<Props> = ({ className }) => {
     <FullWidth as="header" css={style} expansionStyle={innerStyle} className={className}>
       <Link href={PAGE.HOME.PATH}>
         <a>
-          <Image src="/logos/logo-default.png" width={400} height={66} />
+          <img src="/logos/logo-default.png" width={400} height={66} />
         </a>
       </Link>
       <nav css={navStyle}>

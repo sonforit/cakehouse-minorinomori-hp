@@ -1,6 +1,5 @@
 import { VFC } from 'react';
 import { css } from '@emotion/core';
-import Image from 'next/image';
 import { COLOR, FONT_FAMILY, LINE_HEIGHT } from '@/constants/styles';
 
 type Props = {
@@ -11,7 +10,7 @@ export const CompanyCard: VFC<Props> = ({ className }) => {
   return (
     <div css={style} className={className}>
       <header>
-        <Image src="/logos/logo-default.png" width={240} height={40} />
+        <img src="/logos/logo-default.png" width={240} height={40} />
       </header>
 
       <dl>

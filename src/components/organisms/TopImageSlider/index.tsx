@@ -1,6 +1,5 @@
 import { VFC, useMemo } from 'react';
 import { css } from '@emotion/core';
-import Image from 'next/image';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -30,10 +29,10 @@ export const TopImageSlider: VFC<Props> = ({ className }) => {
         infinite
         dots
       >
-        <Image src="/images/shop-image.jpg" width={1200} height={500} />
-        <Image src="/images/cream-puff-image.jpg" width={1200} height={500} />
-        <Image src="/images/fruit-tart-image.jpg" width={1200} height={500} />
-        <Image src="/images/pudding-roll-image.jpg" width={1200} height={500} />
+        <img src="/images/shop-image.jpg" width={1200} height={500} />
+        <img src="/images/cream-puff-image.jpg" width={1200} height={500} />
+        <img src="/images/fruit-tart-image.jpg" width={1200} height={500} />
+        <img src="/images/pudding-roll-image.jpg" width={1200} height={500} />
       </Slider>
     </div>
   );
