@@ -29,6 +29,7 @@ export const COLOR = {
   SHADOW: {
     CARD: '#ccc',
   },
+  NEW: '#CE5043',
 } as const;
 
 const BASE_FONT_FAMILY =
