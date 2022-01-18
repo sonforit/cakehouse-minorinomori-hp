@@ -28,6 +28,34 @@ export interface ICaregory extends Entry<ICaregoryFields> {
   };
 }
 
+export interface INewsFields {
+  /** 掲載日 */
+  postedAt: string;
+
+  /** タイトル */
+  title: string;
+
+  /** 内容 */
+  content: Document;
+}
+
+export interface INews extends Entry<INewsFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: 'news';
+        linkType: 'ContentType';
+        type: 'Link';
+      };
+    };
+  };
+}
+
 export interface IProductFields {
   /** 商品名 */
   name: string;
@@ -71,7 +99,7 @@ export interface IProduct extends Entry<IProductFields> {
   };
 }
 
-export type CONTENT_TYPE = 'caregory' | 'product';
+export type CONTENT_TYPE = 'caregory' | 'news' | 'product';
 
 export type LOCALE_CODE = 'ja-JP';
 
