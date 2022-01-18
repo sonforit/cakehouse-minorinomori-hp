@@ -38,7 +38,7 @@ export const ProductCard: VFC<Props> = ({ className, product }) => {
 const style = css`
   display: block;
   border-radius: 5px;
-  box-shadow: 0 0 8px grey;
+  box-shadow: 0 4px 12px ${COLOR.SHADOW.CARD};
   overflow: hidden;
   position: relative;
   color: ${COLOR.FONT.DEFAULT};
@@ -83,6 +83,8 @@ const style = css`
       img {
         object-fit: cover;
         transition: all 5s ease;
+        width: 100%;
+        height: 100%;
       }
     }
   }

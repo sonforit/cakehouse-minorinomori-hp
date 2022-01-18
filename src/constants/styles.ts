@@ -26,6 +26,9 @@ export const COLOR = {
     FOOTER: '#6E5450',
     SECTION: '#FAF9F7',
   },
+  SHADOW: {
+    CARD: '#ccc',
+  },
 } as const;
 
 const BASE_FONT_FAMILY =
