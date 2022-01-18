@@ -1,5 +1,5 @@
 ---
-to: src/components/<%= component_type %>/<%= path_name %>/<%= component_name %>.tsx
+to: src/components/<%= component_type %>/<%= path_name %>/index.tsx
 ---
 import { VFC } from 'react';
 import { css } from '@emotion/core';
