@@ -7,14 +7,16 @@ import Link from 'next/link';
 import { PAGE } from '@/constants/pages';
 import { BaseButton } from '@/components/atoms';
 import { Product } from '@/domains/Product';
-import { ProductCard } from '@/components/molecules';
+import { News } from '@/domains/News';
+import { ProductCard, NewsCard } from '@/components/molecules';
 
 type Props = {
   className?: string;
   products: Product[];
+  news: News[];
 };
 
-export const HomeTemplate: VFC<Props> = ({ className, products }) => {
+export const HomeTemplate: VFC<Props> = ({ className, products, news }) => {
   return (
     <div className={className}>
       <TopImageSlider />
@@ -32,7 +34,7 @@ export const HomeTemplate: VFC<Props> = ({ className, products }) => {
       <Section titleJp="商品" titleEn="Products" colored>
         <ul css={productListStyle}>
           {products.map((product) => (
-            <li key={product.slug}>
+            <li key={product.id}>
               <ProductCard product={product} />
             </li>
           ))}
@@ -56,7 +58,13 @@ export const HomeTemplate: VFC<Props> = ({ className, products }) => {
         </div>
       </Section>
       <Section titleJp="ニュース" titleEn="News" colored>
-        コンテンツは後から
+        <ul css={newsListStyle}>
+          {news.map((_news) => (
+            <li key={_news.id}>
+              <NewsCard news={_news} />
+            </li>
+          ))}
+        </ul>
       </Section>
       <Section css={accessSectionStyle} titleJp="アクセス" titleEn="Access" isFullSize>
         <AccessMap />
@@ -106,4 +114,10 @@ const productListStyle = css`
   > li {
     width: 30%;
   }
+`;
+
+const newsListStyle = css`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 `;

@@ -19,6 +19,7 @@ const Template: Story<Props> = (args) => <NewsCard {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   news: new News({
+    id: 'abc',
     postedAt: new Date(),
     title: 'お知らせのタイトルが入ります',
     content: 'ここにコンテンツが入ります',

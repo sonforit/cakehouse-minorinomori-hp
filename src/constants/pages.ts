@@ -29,4 +29,8 @@ export const PAGE = {
     LABEL: '3Dケーキ',
     PATH: '/three-d-cake',
   },
+  NEWS: {
+    LABEL: 'おしらせ',
+    PATH: '/news',
+  },
 } as const;

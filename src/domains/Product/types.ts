@@ -8,7 +8,8 @@ export type Category = {
   slug: string;
 };
 
-export type ProductInitializer = {
+export type Initializer = {
+  id: string;
   name: string;
   slug: string;
   category: Category;

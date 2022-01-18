@@ -1,17 +1,19 @@
 import { checkIsNew, createPriceLabel } from './utils';
-import { ProductInitializer } from './types';
+import { Initializer } from './types';
 
 export class Product {
-  private _name: ProductInitializer['name'] = '';
-  private _slug: ProductInitializer['slug'] = '';
-  private _category: ProductInitializer['category'] = { name: '', slug: '' };
-  private _prices: ProductInitializer['prices'] = [];
-  private _imageUrl: ProductInitializer['imageUrl'] = '';
-  private _description: ProductInitializer['description'] = '';
-  private _notes: ProductInitializer['notes'] = [];
-  private _createdAt: ProductInitializer['createdAt'] = new Date();
+  private _id: Initializer['id'] = '';
+  private _name: Initializer['name'] = '';
+  private _slug: Initializer['slug'] = '';
+  private _category: Initializer['category'] = { name: '', slug: '' };
+  private _prices: Initializer['prices'] = [];
+  private _imageUrl: Initializer['imageUrl'] = '';
+  private _description: Initializer['description'] = '';
+  private _notes: Initializer['notes'] = [];
+  private _createdAt: Initializer['createdAt'] = new Date();
 
-  constructor(initialValues: ProductInitializer) {
+  constructor(initialValues: Initializer) {
+    this._id = initialValues.id;
     this._name = initialValues.name;
     this._slug = initialValues.slug;
     this._category = initialValues.category;
@@ -22,6 +24,9 @@ export class Product {
     this._createdAt = initialValues.createdAt;
   }
 
+  get id() {
+    return this._id;
+  }
   get name() {
     return this._name;
   }

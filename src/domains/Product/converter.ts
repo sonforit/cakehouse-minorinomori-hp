@@ -5,6 +5,7 @@ import { Product } from '@/domains/Product';
 export const convertProduct = (product: Entry<IProductFields>) => {
   const { name, slug, category, prices, imageUrl, description, notes, createdAt } = product.fields;
   return new Product({
+    id: product.sys.id,
     name,
     slug,
     category: {
