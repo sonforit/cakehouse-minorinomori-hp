@@ -1,4 +1,4 @@
-import { checkIsNew } from './utils';
+import { checkIsNew, createPostedAtLabel } from './utils';
 import { ProductInitializer } from './types';
 
 export class News {
@@ -22,6 +22,9 @@ export class News {
     return this._postedAt;
   }
   get isNew() {
-    return checkIsNew(new Date(), this.postedAt);
+    return checkIsNew(new Date(), this._postedAt);
+  }
+  get postedAtLabel() {
+    return createPostedAtLabel(this._postedAt);
   }
 }
